@@ -4,11 +4,11 @@ public class test {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("¼ıÀÚ:");
+		System.out.println("ìˆ«ì:");
 		int a = scan.nextInt();
-		System.out.println("¹®ÀÚ:");
+		System.out.println("ë¬¸ì:");
 		String b = scan.nextLine();
-		System.out.println("¼ıÀÚ:");
+		System.out.println("ìˆ«ì:");
 		int c = scan.nextInt();
 		
 		System.out.println(a+b+c);

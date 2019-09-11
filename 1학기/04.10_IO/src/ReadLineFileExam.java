@@ -6,16 +6,16 @@ import java.io.IOException;
 public class ReadLineFileExam {
 
 	public static void main(String[] args) {
-		//ÆÄÀÏÀĞ°Ô ¿¬°áÇÏÀÚ
+		//íŒŒì¼ì½ê²Œ ì—°ê²°í•˜ì
 		FileReader fr;
 		try {
 			fr = new FileReader("src/dataw.txt");
-			//¹öÆÛÀĞ°Ô ¿¬°áÇÏÀÚ
+			//ë²„í¼ì½ê²Œ ì—°ê²°í•˜ì
 			BufferedReader br = new BufferedReader(fr);
-			//ÇÑÁÙÀĞÀÚ
+			//í•œì¤„ì½ì
 			String s;
 			while((s = br.readLine()) != null) {
-				//È­¸é¿¡ Ãâ·ÂÇÏÀÚ
+				//í™”ë©´ì— ì¶œë ¥í•˜ì
 				System.out.println(s);
 			}
 		} catch (FileNotFoundException e) {

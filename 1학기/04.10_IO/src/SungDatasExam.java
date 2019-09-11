@@ -5,29 +5,29 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 /*
-±è¼öÁø	±İÃµ±¸	100.0	100.0	total	average
-¹Ú¼­¿¬	¾çÃµ±¸	100.0	100.0	total	average
-ÀÌÃ¤¸°	±¤ÁÖºÏ±¸	70.0	80.0	total	average
-¿øÃ¤¸°	°ü¾Ç±¸	30.0	20.8	total	average
+ê¹€ìˆ˜ì§„	ê¸ˆì²œêµ¬	100.0	100.0	total	average
+ë°•ì„œì—°	ì–‘ì²œêµ¬	100.0	100.0	total	average
+ì´ì±„ë¦°	ê´‘ì£¼ë¶êµ¬	70.0	80.0	total	average
+ì›ì±„ë¦°	ê´€ì•…êµ¬	30.0	20.8	total	average
  */
 
 public class SungDatasExam {
 
 	public static void main(String[] args) {
-		//ÆÄÀÏ ¿¬°áÇÏÀÚ(writed.txt)
+		//íŒŒì¼ ì—°ê²°í•˜ì(writed.txt)
 		FileReader fr;
 		try {
 			fr = new FileReader("src/writed.txt");
-			//¹öÆÛ ¿¬°áÇÏÀÚ(readLine()ÇÏ±â À§ÇØ¼­)
+			//ë²„í¼ ì—°ê²°í•˜ì(readLine()í•˜ê¸° ìœ„í•´ì„œ)
 			BufferedReader br = new BufferedReader(fr);
-			//ÇÑÁÙ ÀĞ°í, \t·Î ¿¬°áÇÏÀÚ
-			String csvStr = "";	//¸ğµç ³»¿ë \t·Î ¿¬°áÇÑ String
-			String tmpStr = "";	//ÇÑÁÙ ÀĞ±â¿ë ÀÓ½Ã String
+			//í•œì¤„ ì½ê³ , \të¡œ ì—°ê²°í•˜ì
+			String csvStr = "";	//ëª¨ë“  ë‚´ìš© \të¡œ ì—°ê²°í•œ String
+			String tmpStr = "";	//í•œì¤„ ì½ê¸°ìš© ì„ì‹œ String
 			while((tmpStr = br.readLine()) != null) {
 				csvStr += tmpStr + "\t"; 
 			}
 			//System.out.println(csvStr);
-			//tokenÀ¸·Î ³ª´©¾î µ¥ÀÌÅÍ ÀúÀåÇÏÀÚ
+			//tokenìœ¼ë¡œ ë‚˜ëˆ„ì–´ ë°ì´í„° ì €ì¥í•˜ì
 			StringTokenizer parse = new StringTokenizer(csvStr, "\t");
 			int length = parse.countTokens() / 4;
 			String[] name = new String[length];
@@ -41,16 +41,16 @@ public class SungDatasExam {
 				address[i] = parse.nextToken();
 				math[i] = Double.parseDouble(parse.nextToken());	//String->double
 				english[i] = Double.parseDouble(parse.nextToken());	//String->double
-				//total, avg °è»êÇÏÀÚ
+				//total, avg ê³„ì‚°í•˜ì
 				total[i] = math[i] + english[i];
 				avg[i] = total[i] / 2;
 			}
-			//Ãâ·ÂÇÏÀÚ
+			//ì¶œë ¥í•˜ì
 			//0~<length i
 			for(int i = 0; i < length; i++) {
-				System.out.println("ÀÌ¸§:"+name[i]+", ÁÖ¼Ò:"+address[i]
-					+", ¼öÇĞ:"+math[i]+", ¿µ¾î:"+english[i]
-					+", ÃÑÁ¡:"+total[i]+", Æò±Õ:"+avg[i]);
+				System.out.println("ì´ë¦„:"+name[i]+", ì£¼ì†Œ:"+address[i]
+					+", ìˆ˜í•™:"+math[i]+", ì˜ì–´:"+english[i]
+					+", ì´ì :"+total[i]+", í‰ê· :"+avg[i]);
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
