@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI2_Components {
     public static void main(String[] args) {
@@ -27,6 +29,13 @@ public class GUI2_Components {
         JComboBox cbox= new JComboBox(fruits);
         cbox.addItem("strawberry");
         cbox.addItem("cherry");
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                button.setText("click");
+            }
+        });
 
         panel.add(label);
         panel.add(button);
