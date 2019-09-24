@@ -25,15 +25,28 @@ public class GUI2_Components {
         JTextField textField = new JTextField("JTextField");
         JTextArea textArea = new JTextArea(2, 10);
 
-        String[] fruits={"apple", "banana", "kiwi", "mango", "pear", "peach", "berry"};
+        String[] fruits={"apple", "banana", "kiwi", "mango", "peach"};
         JComboBox cbox= new JComboBox(fruits);
         cbox.addItem("strawberry");
         cbox.addItem("cherry");
 
+        JLabel labelResult = new JLabel("Result");
+
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                button.setText("click");
+                String resultString = "";
+                resultString += label.getText();
+                resultString += button.getText();
+                resultString += checkBox1.isSelected();
+                resultString += checkBox2.isSelected();
+                resultString += radioButton1.isSelected();
+                resultString += radioButton2.isSelected();
+                resultString += textField.getText();
+                resultString += textArea.getText();
+                resultString += cbox.getSelectedIndex();
+                resultString += cbox.getSelectedItem();
+                labelResult.setText(resultString);
             }
         });
 
@@ -45,7 +58,10 @@ public class GUI2_Components {
         panel.add(radioButton2);
         panel.add(textField);
         panel.add(cbox);
+        panel.add(labelResult);
+
         frame.add(panel);
+
 
         frame.setPreferredSize(new Dimension(600,400));
         frame.pack();
