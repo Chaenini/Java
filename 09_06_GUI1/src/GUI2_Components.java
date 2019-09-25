@@ -56,42 +56,32 @@ public class GUI2_Components {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 //값 가져오기
-                String resultString = "";
-                resultString += label.getText();
-                resultString += button.getText();
-                resultString += checkBox1.isSelected();
-                resultString += checkBox2.isSelected();
-                resultString += radioButton1.isSelected();
-                resultString += radioButton2.isSelected();
-                resultString += textField.getText();
-                resultString += textArea.getText();
-                resultString += cbox.getSelectedIndex();
-                resultString += cbox.getSelectedItem();
-                labelResult.setText(resultString);
+                showResult(label, button, checkBox1, checkBox2, radioButton1, radioButton2, textField, textArea, cbox, labelResult);
             }
         });
 
         ItemListener il = new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
+                showResult(label, button, checkBox1, checkBox2, radioButton1, radioButton2, textField, textArea, cbox, labelResult);
                 //체크박스 1이 체크 되었을때 실행
-                if (e.getSource() == checkBox1){
-                    System.out.println("JCheckedBox1 : "+checkBox1.isSelected());
-                }
-                //체크박스 2이 체크 되었을때 실행
-                else if (e.getSource() == checkBox2){
-                    System.out.println("JCheckedBox2 : "+checkBox2.isSelected());
-                }
-                else if (e.getSource() == radioButton1){
-                    System.out.println("미성년자 : "+radioButton1.isSelected());
-                }
-                else if (e.getSource() == radioButton2){
-                    System.out.println("성인 : "+radioButton2.isSelected());
-                }
-                else if (e.getSource() == cbox){
-                    System.out.println(cbox.getSelectedItem());
-                }
-            }
+//                if (e.getSource() == checkBox1){
+//                    System.out.println("JCheckedBox1 : "+checkBox1.isSelected());
+//                }
+//                //체크박스 2이 체크 되었을때 실행
+//                else if (e.getSource() == checkBox2){
+//                    System.out.println("JCheckedBox2 : "+checkBox2.isSelected());
+//                }
+//                else if (e.getSource() == radioButton1){
+//                    System.out.println("미성년자 : "+radioButton1.isSelected());
+//                }
+//                else if (e.getSource() == radioButton2){
+//                    System.out.println("성인 : "+radioButton2.isSelected());
+//                }
+//                else if (e.getSource() == cbox){
+//                    System.out.println(cbox.getSelectedItem());
+//                }
+           }
         };
 
         checkBox1.addItemListener(il);
@@ -117,5 +107,20 @@ public class GUI2_Components {
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    private static void showResult(JLabel label, JButton button, JCheckBox checkBox1, JCheckBox checkBox2, JRadioButton radioButton1, JRadioButton radioButton2, JTextField textField, JTextArea textArea, JComboBox cbox, JLabel labelResult) {
+        String resultString = "";
+        resultString += label.getText();
+        resultString += button.getText();
+        resultString += checkBox1.isSelected();
+        resultString += checkBox2.isSelected();
+        resultString += radioButton1.isSelected();
+        resultString += radioButton2.isSelected();
+        resultString += textField.getText();
+        resultString += textArea.getText();
+        resultString += cbox.getSelectedIndex();
+        resultString += cbox.getSelectedItem();
+        labelResult.setText(resultString);
     }
 }
